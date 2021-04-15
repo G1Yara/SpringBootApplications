@@ -26,8 +26,7 @@ public class JwtTokenProvider {
 
 
     /**
-     * Generates a token from a principal object. Embed the refresh token in the jwt
-     * so that a new jwt can be created
+     * Generates a token from a principal object
      */
     public String generateToken(CustomUserDetails customUserDetails) {
         Instant expiryDate = Instant.now().plusMillis(jwtExpirationInMs);

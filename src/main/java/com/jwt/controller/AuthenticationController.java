@@ -5,6 +5,7 @@ import com.jwt.model.LoginRequest;
 import com.jwt.model.LoginResponse;
 import com.jwt.security.JwtAuthenticationEntryPoint;
 import com.jwt.services.AuthenticationService;
+import io.swagger.annotations.Api;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
+@Api(tags = "Authentication")
 public class AuthenticationController {
 
     private static final Logger logger = Logger.getLogger(JwtAuthenticationEntryPoint.class);
@@ -23,7 +25,7 @@ public class AuthenticationController {
     private AuthenticationService authService;
 
     /**
-     * Entry point for the user log in. Return the jwt auth token and the refresh token
+     * Entry point for the user log in. Return the jwt auth token
      */
     @PostMapping("/v1/authenticate")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
