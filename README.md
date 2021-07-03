@@ -1,1 +1,1 @@
-# SpringBootJwtToken
+# SpringBootApplications
